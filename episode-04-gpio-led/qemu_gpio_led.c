@@ -25,7 +25,7 @@ static int qemu_gpio_led_probe(struct platform_device *pdev)
 
     printk("ready to %s ...\n", __FUNCTION__);
 
-    ret = (int)devm_kzalloc(&pdev->dev, sizeof(*led), GFP_KERNEL);
+    led = devm_kzalloc(&pdev->dev, sizeof(*led), GFP_KERNEL);
     if (!led)
         return -ENOMEM;
 
